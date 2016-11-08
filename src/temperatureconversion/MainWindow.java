@@ -1,16 +1,10 @@
 package temperatureconversion;
 
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import javax.swing.JOptionPane;
 
 /**
- *
- * @author Chris Gonzalez
+ * This is the graphical user interface for this program
+ * @author Chris Gonzalez Version 1.0 11/08/2016 
  */
 public class MainWindow extends javax.swing.JFrame {
 
@@ -102,7 +96,7 @@ public class MainWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConvertTemperatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConvertTemperatureActionPerformed
-        TemperatureConverterStrategy temperatureConverter = 
+        try{TemperatureConverterStrategy temperatureConverter = 
                 new FahrenheitToCelsiusConverter();
         
         TemperatureConversionManager temperatureConversion = 
@@ -111,7 +105,9 @@ public class MainWindow extends javax.swing.JFrame {
                 .getConvertedTemperature(Double
                         .parseDouble(txtTemperatureToBeConverted
                                 .getText()), temperatureConverter)));
-        
+        }catch(IllegalArgumentException ia){
+            JOptionPane.showMessageDialog(rootPane, ia.getMessage());
+        }
     }//GEN-LAST:event_btnConvertTemperatureActionPerformed
 
     private void txtTemperatureToBeConvertedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTemperatureToBeConvertedActionPerformed
