@@ -11,5 +11,5 @@ public interface TemperatureConverterStrategy {
      * @param temperatureToConvert Temperature value to be converted
      * @return converted temperature value
      */
-    public abstract double getConvertedTemperature(double temperatureToConvert);
+    public abstract String getConvertedTemperature(double temperatureToConvert);
 }

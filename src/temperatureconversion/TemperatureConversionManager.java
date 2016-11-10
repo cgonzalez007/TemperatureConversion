@@ -20,7 +20,7 @@ public class TemperatureConversionManager {
      * @return converted temperature from 
      * @throws IllegalArgumentException when there is an invalid input
      */
-    public final double getConvertedTemperature(double temperatureToConvert, 
+    public final String getConvertedTemperature(double temperatureToConvert, 
             TemperatureConverterStrategy temperatureConverter)throws 
             IllegalArgumentException{
         if(temperatureToConvert < MINIMUM_INPUT || temperatureToConvert > 
