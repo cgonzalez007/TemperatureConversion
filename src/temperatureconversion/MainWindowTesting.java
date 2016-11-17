@@ -40,10 +40,11 @@ public class MainWindowTesting extends JFrame implements ActionListener{
      */
     public MainWindowTesting() {
         c = this.getContentPane();
-        //Create components of window 
+        //Create components of window and set alignment to CENTER
         lblInstruction = new JLabel("Temperature value to be converted:");
         lblInstruction.setAlignmentX(Component.CENTER_ALIGNMENT);
         lblConvertedTemperature = new JLabel(" ");
+        lblConvertedTemperature.setAlignmentX(Component.CENTER_ALIGNMENT);
         txtTemperatureToBeConverted = new JTextField(6);
         btnConvertTemperature = new JButton("Convert");
         btnConvertTemperature.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -95,7 +96,7 @@ public class MainWindowTesting extends JFrame implements ActionListener{
                         .getText()),fahrenheitToCelsius));
             }
         }catch(NumberFormatException nf){
-            JOptionPane.showMessageDialog(rootPane, "Please enter a valid value");
+            JOptionPane.showMessageDialog(rootPane, "Error: A value must be entered");
         }catch(IllegalArgumentException ia){
             JOptionPane.showMessageDialog(rootPane, ia.getMessage());
         }

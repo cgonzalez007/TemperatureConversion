@@ -27,7 +27,6 @@ public class MainWindow extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         txtTemperatureToBeConverted = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         lblConvertedTemperature = new javax.swing.JLabel();
         btnConvertTemperature = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -47,11 +46,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("° ");
-
         lblConvertedTemperature.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblConvertedTemperature.setText("x");
 
         btnConvertTemperature.setText("Convert");
         btnConvertTemperature.addActionListener(new java.awt.event.ActionListener() {
@@ -98,8 +93,6 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblConvertedTemperature)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnConvertTemperature))
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -120,9 +113,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblConvertedTemperature)
-                        .addComponent(jLabel2))
+                    .addComponent(lblConvertedTemperature)
                     .addComponent(btnConvertTemperature))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
@@ -151,7 +142,7 @@ public class MainWindow extends javax.swing.JFrame {
                         .getText()),fahrenheitToCelsius));
             }
         }catch(NumberFormatException nf){
-            JOptionPane.showMessageDialog(rootPane, "Please enter a valid value");
+            JOptionPane.showMessageDialog(rootPane, "Error: A value must be entered");
         }catch(IllegalArgumentException ia){
             JOptionPane.showMessageDialog(rootPane, ia.getMessage());
         }
@@ -207,7 +198,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnConvertTemperature;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblConvertedTemperature;
     private javax.swing.JRadioButton rbCelsiusToFahrenheit;
